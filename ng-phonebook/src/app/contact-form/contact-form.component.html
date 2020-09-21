@@ -1,0 +1,59 @@
+{{submitted}}
+<div class="container">
+  <div [hidden]="submitted"></div>
+  <h1>Add Contact</h1>
+  <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" class="form-control" id="firstName"
+             required
+             [(ngModel)]="model.firstName" name="firstName"
+             [disabled]="submitted"
+             #firstName="ngModel">
+      <div [hidden]="firstName.valid || firstName.pristine"
+           class="alert alert-danger">
+        First Name is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input type="text" class="form-control" id="lastName"
+             required
+             [(ngModel)]="model.lastName" name="lastName"
+             [disabled]="submitted"
+             #lastName="ngModel">
+      <div [hidden]="lastName.valid || lastName.pristine"
+           class="alert alert-danger">LastName is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" class="form-control" id="email"
+             required
+             [(ngModel)]="model.email" name="email"
+             [disabled]="submitted"
+             #email="ngModel">
+      <div [hidden]="email.valid || email.pristine"
+           class="alert alert-danger">Email is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="gender">Contact Price</label>
+      <input type="text" class="form-control" id="gender"
+             required
+             [(ngModel)]="model.gender" name="gender"
+             [disabled]="submitted"
+             #gender="ngModel">
+      <div [hidden]="gender.valid || gender.pristine"
+           class="alert alert-danger">gGender is required
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="!contactForm.form.valid">{{btnName}}</button>
+  </form>
+
+</div>
+
