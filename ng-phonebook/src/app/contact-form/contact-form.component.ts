@@ -22,12 +22,18 @@ export class ContactFormComponent implements OnInit {
 
   private readAll() {
     return this.contactService.loadAll().subscribe((list) => {
+      console.log('read all contacts', list);
       this.contacts = list;
     });
   }
 
   createNew() {
-    return {};
+    return {
+      gender: '',
+      email: '',
+      firstName: '',
+      lastName: ''
+    };
   }
 
   onSubmit(contactForm: NgForm) {
