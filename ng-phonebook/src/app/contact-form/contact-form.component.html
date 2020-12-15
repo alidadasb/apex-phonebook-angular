@@ -41,14 +41,14 @@
     </div>
 
     <div class="form-group">
-      <label for="gender">Contact Price</label>
+      <label for="gender">Gender</label>
       <input type="text" class="form-control" id="gender"
              required
              [(ngModel)]="model.gender" name="gender"
              [disabled]="submitted"
              #gender="ngModel">
       <div [hidden]="gender.valid || gender.pristine"
-           class="alert alert-danger">gGender is required
+           class="alert alert-danger">Gender is required
       </div>
     </div>
 
