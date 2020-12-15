@@ -3,11 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ContactsComponent } from './contacts/contacts.component';
+import { ContactsComponent } from './components/contact-list/contacts.component';
 import {FormsModule} from "@angular/forms";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
-import { ContactFormComponent } from './contact-form/contact-form.component';
-import {HttpMockRequestInterceptor} from "./http-mock-request-interceptor.service";
+import { ContactFormComponent } from './components/contact-form/contact-form.component';
+import {HttpMockRequestInterceptor} from "./services/http-mock-request-interceptor.service";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {HttpMockRequestInterceptor} from "./http-mock-request-interceptor.servic
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [
     {

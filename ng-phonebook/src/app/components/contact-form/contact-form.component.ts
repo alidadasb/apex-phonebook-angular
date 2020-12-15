@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ContactService} from "../contacts.service";
+import {ContactService} from "../../services/contacts.service";
 import {NgForm} from "@angular/forms";
-import {Contact} from '../contacts/contact';
+import {Contact} from '../contact-list/contact';
 
 @Component({
   selector: 'app-contact-form',
@@ -12,24 +12,13 @@ export class ContactFormComponent implements OnInit {
   model = this.createNew();
   submitted = false;
   btnName = 'Submit';
-  contacts = [];
 
   constructor(private contactService: ContactService ) { }
 
-  ngOnInit(): void {
-    this.readAll();
-  }
-
-  private readAll() {
-    return this.contactService.loadAll().subscribe((list) => {
-      console.log('read all contacts', list);
-      this.contacts = list;
-    });
-  }
+  ngOnInit(): void {}
 
   createNew() {
     return {
-      gender: '',
       email: '',
       firstName: '',
       lastName: ''
@@ -41,7 +30,6 @@ export class ContactFormComponent implements OnInit {
 
     this.contactService.addContact(this.model)
       .subscribe(contact => {
-        this.contacts.push(contact);
         console.log('object saved', contact);
         this.model = this.createNew();
         this.submitted = false;

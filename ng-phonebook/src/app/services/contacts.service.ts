@@ -2,7 +2,7 @@ import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {throwError} from "rxjs";
 import {catchError, retry} from "rxjs/operators";
 import {Injectable} from "@angular/core";
-import {Contact} from "./contacts/contact";
+import {Contact} from "../components/contact-list/contact";
 
 const httpOptions = {
   headers: new HttpHeaders({

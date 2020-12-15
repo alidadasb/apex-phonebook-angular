@@ -1,4 +1,3 @@
-{{submitted}}
 <div class="container">
   <div [hidden]="submitted"></div>
   <h1>Add Contact</h1>
@@ -37,18 +36,6 @@
              #email="ngModel">
       <div [hidden]="email.valid || email.pristine"
            class="alert alert-danger">Email is required
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="gender">Contact Price</label>
-      <input type="text" class="form-control" id="gender"
-             required
-             [(ngModel)]="model.gender" name="gender"
-             [disabled]="submitted"
-             #gender="ngModel">
-      <div [hidden]="gender.valid || gender.pristine"
-           class="alert alert-danger">gGender is required
       </div>
     </div>
 
