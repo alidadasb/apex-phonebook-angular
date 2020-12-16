@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ContactService} from "../../services/contacts.service";
+import {Contact} from "./contact";
+import {updatePlaceholderMap} from "@angular/compiler/src/render3/view/i18n/util";
 
 @Component({
   selector: 'app-contacts',
