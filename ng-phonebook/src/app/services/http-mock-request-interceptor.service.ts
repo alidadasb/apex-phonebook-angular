@@ -20,7 +20,7 @@ const urls = [
         url: "http://localhost:8080/api/contact/",
         method: 'POST',
         getData: (request) => {
-            data.data.push(request.body)
+            // data.data.push(request.body)
             return request.body
         }
     }
